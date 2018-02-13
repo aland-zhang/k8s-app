@@ -11,5 +11,5 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
   nfs:
-    path: /opt/kubernetes/eap/data
-    server: 10.0.0.191
+    path: /opt/k8s/eap/data
+    server: 10.45.10.148
