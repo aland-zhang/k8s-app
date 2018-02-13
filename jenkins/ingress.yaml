@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins
+spec:
+  tls:
+  - hosts: 
+    - jenkins.gdphdc.com
+    secretName: jenkins-ingress-secret 
+  rules:
+  - host: jenkins.gdphdc.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-svc
+          servicePort: 80

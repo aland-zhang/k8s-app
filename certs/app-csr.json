@@ -1,0 +1,19 @@
+{
+  "CN": "*.gdphdc.com",
+  "hosts": [
+    "*.gdphdc.com"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+       "C": "PingHai PowerPlant Co., Ltd",
+       "ST": "GuangDong",
+       "L": "HuiZhou",
+       "O": "PHDC",            
+       "OU": "xxzx"
+    }
+  ]
+}

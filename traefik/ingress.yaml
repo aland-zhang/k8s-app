@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: harbor-ingress
+  namespace: harbor
+spec:
+  rules:
+  - host: harbor.gdphdc.com
+    http:
+      paths:
+      - backend:
+          serviceName: ui
+          servicePort: 80
+        path: /

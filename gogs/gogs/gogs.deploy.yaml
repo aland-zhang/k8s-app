@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gogs
+  labels:
+    name: gogs
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: gogs-apps
+    spec:
+      containers:
+      - name: gogs-app
+        image: gogs/gogs:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: gogs-data
+          mountPath: /data
+        - name: gogs-config
+          mountPath: /data/conf/app.ini
+        resources:
+          limits:
+            cpu: 400m
+            memory: 2048Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
+      volumes:
+      - name: gogs-data
+        persistentVolumeClaim:
+          claimName: gogs-data-pvc
+      - name: gogs-config
+        persistentVolumeClaim:
+          claimName: gogs-data-pvc

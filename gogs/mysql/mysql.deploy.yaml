@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gogs-mysql
+  labels:
+    name: gogs-mysql
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: gogs-mysql-apps
+    spec:
+      containers:
+      - name: gogs-mysql-app
+        image: mysql
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom: 
+              configMapKeyRef: 
+               name: gogs-mysql-config
+               key: MYSQL_ROOT_PASSWORD
+          - name: MYSQL_DATABASE
+            valueFrom: 
+              configMapKeyRef: 
+               name: gogs-mysql-config
+               key: MYSQL_DATABASE            
+        volumeMounts:
+        - name: mysql-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-storage
+        persistentVolumeClaim:
+          claimName: gogs-storage-pvc 

@@ -1,0 +1,15 @@
+{
+    "CN": "PingHai PowerPlant Co., Ltd",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "CN": "CN",
+            "ST": "GuangDong",
+            "L": "HuiZhou",
+            "O": "PHDC",            
+            "OU": "xxzx"
+        }    ]
+}
