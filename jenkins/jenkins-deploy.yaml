@@ -11,9 +11,11 @@ spec:
         k8s-app: jenkins
     spec:
       serviceAccount: jenkins
+      imagePullSecrets:
+      - name: harborkey
       containers:
       - name: jenkins
-        image: jenkins:latest
+        image: harbor.gdphdc.com/jenkins/jenkins:0.1  
         imagePullPolicy: IfNotPresent
         volumeMounts:
         - mountPath: /var/jenkins_home
