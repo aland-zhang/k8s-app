@@ -1,0 +1,7 @@
+## Jenkins部署疑难解答
+
+由于Jenkins采用的git控件访问https需要证书，所以对Jenkins镜像进行了二次封装，将证书导入Java中后再docker build后推送到私库
+
+k8s中私库需要提供imagePullSecrets（私库用户账户）需要从以下命令创建secret（仅针对单个namespace）
+
+	$ kubectl create secret docker-registry harborkey --docker-server=harbor.gdphdc.com --docker-username=admin --docker-password=Harbor12345 --docker-email=deerjoe@qq.com
