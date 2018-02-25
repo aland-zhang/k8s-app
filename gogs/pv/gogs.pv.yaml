@@ -6,10 +6,10 @@ metadata:
     type: gogs-data-pv
 spec:
   capacity:
-    storage: 50Gi
+    storage: 100Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
   nfs:
-    path: /opt/k8s/harbor
+    path: /opt/k8s/gogs/data
     server: 10.45.10.148

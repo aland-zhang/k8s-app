@@ -3,7 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: gogs-data-pvc
 spec:
-  storageClassName: nfs-storage
   accessModes:
     - ReadWriteMany
   resources:

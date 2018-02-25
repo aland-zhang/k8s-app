@@ -7,3 +7,4 @@ metadata:
     app: ingress-nginx
 data:
   proxy-body-size: "2048m"
+  proxy-connect-timeout: "600"
