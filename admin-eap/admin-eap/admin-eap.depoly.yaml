@@ -16,7 +16,7 @@ spec:
       - name: harborkey
       containers:
       - name: eap-app
-        image: harbor.deerjoe.com/admineap/admineap:0.0.1
+        image: harbor.gdphdc.com/admineap/admineap:0.0.1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
