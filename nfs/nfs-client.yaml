@@ -24,9 +24,10 @@ spec:
             - name: NFS_SERVER
               value: 10.45.10.148
             - name: NFS_PATH
-              value: /opt/k8s
+              value: /opt/k8s/storage
       volumes:
         - name: nfs-client-root
           nfs:
             server: 10.45.10.148
-            path: /opt/k8s
+            path: /opt/k8s/storage
+
