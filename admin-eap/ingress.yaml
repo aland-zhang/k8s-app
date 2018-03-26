@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: eap
+spec:
+  tls:
+  - hosts: 
+    - eap.gdphdc.com
+    secretName: eap-ingress-secret 
+  rules:
+  - host: eap.gdphdc.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: eap
+          servicePort: 80
