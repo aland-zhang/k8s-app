@@ -11,7 +11,7 @@ spec:
       labels:
         app: nfs-client-provisioner
     spec:
-      serviceAccount: nfs-provisioner
+      serviceAccount: nfs-client-provisioner
       containers:
         - name: nfs-client-provisioner
           image: registry.cn-hangzhou.aliyuncs.com/szss_quay_io/nfs-client-provisioner:v2.0.1

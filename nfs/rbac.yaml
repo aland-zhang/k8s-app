@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: nfs-provisioner
+  name: nfs-client-provisioner
 
 ---
 kind: ClusterRole
@@ -30,7 +30,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: nfs-client-provisioner
-    namespace: default
+    namespace: kube-system
 roleRef:
   kind: ClusterRole
   name: nfs-client-provisioner-runner
