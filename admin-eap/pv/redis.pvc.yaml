@@ -3,11 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: eap-redis-pvc
 spec:
+  storageClassName: nfs-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 30Gi
-  selector:
-    matchLabels:
-      type: eap-redis-pv
