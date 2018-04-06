@@ -20,13 +20,8 @@ spec:
         volumeMounts:
         - mountPath: /var/jenkins_home
           name: home
-        - mountPath: /maven
-          name:  jenkins-maven-config
       volumes:
         - name: home
           persistentVolumeClaim:
             claimName: jenkins
-        - name:  jenkins-maven-config
-          configMap:
-            name: jenkins-maven-config
 ---

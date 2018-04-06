@@ -3,11 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: storage-pvc
 spec:
+  storageClassName: nfs-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
-  selector:
-    matchLabels:
-      type: storage
