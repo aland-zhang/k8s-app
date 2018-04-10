@@ -12,4 +12,4 @@
 	kubectl create secret docker-registry harborkey \
 	--docker-server=harbor.gdphdc.com \ 
 	--docker-username=admin --docker-password=Harbor12345 \
-	--docker-email=deerjoe@qq.com -n
+	--docker-email=deerjoe@qq.com -n <NameSpace名>
