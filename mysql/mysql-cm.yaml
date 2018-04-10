@@ -5,6 +5,7 @@ metadata:
   labels:
     app: mysql
 data:
+  MYSQL_ROOT_PASSWORD: "PHPPadmin"
   master.cnf: |
     # Apply this config only on the master.
     [mysqld]

@@ -37,7 +37,7 @@ spec:
           },
           {
             "name": "clone-mysql",
-            "image": gcr.io/google-samples/xtrabackup:1.0
+            "image":  registry.ap-southeast-1.aliyuncs.com/datamesh/xtrabackup:1.0
             "command": ["bash", "-c", "
               set -ex\n
               # Skip the clone if data already exists.\n
@@ -86,7 +86,7 @@ spec:
         readinessProbe:
           exec:
             # Check we can execute queries over TCP (skip-networking is off).
-            command: ["mysql", "-h", "127.0.0.1", "-e", "SELECT 1"]
+            command: ["mysql", "-h", "127.0.0.1","-e", "SELECT 1"]
           initialDelaySeconds: 5
           timeoutSeconds: 1
       - name: xtrabackup
