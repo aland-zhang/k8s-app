@@ -6,7 +6,7 @@ metadata:
   # 增加annotations：配置session affinity
     ingress.kubernetes.io/affinity: "cookie"
     ingress.kubernetes.io/session-cookie-name: "route"
-    ingress.kubernetes.io/session-cookie-hash: "sha1"
+    ingress.kubernetes.io/session-cookie-hash: "md5"
 spec:
   rules:
   - host: eam.gdphdc.com

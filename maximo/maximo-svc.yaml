@@ -13,4 +13,3 @@ spec:
     name: rmi
   selector:
     name: maximo-apps
-  sessionAffinity: ClientIP
