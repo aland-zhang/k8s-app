@@ -11,11 +11,6 @@ spec:
       labels:
         name: maximo-apps
     spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi 
-    spec:
       imagePullSecrets:
       - name: harborkey  
       containers:
@@ -25,12 +20,14 @@ spec:
         env:
           - name: USER_MEM_ARGS
             value: "-Xms1024m -Xmx4096m -XX:MaxPermSize=512m"
+        #容器存活探针
         livenessProbe:
           httpGet:
             path: /maximo
             port: 7001
           initialDelaySeconds: 180
           periodSeconds: 20
+        #服务存活探针
         readinessProbe:
           httpGet:
             path: /maximo
@@ -40,6 +37,7 @@ spec:
         ports:
         - containerPort: 7001
         - containerPort: 13400
+        #资源限制值
         resources:
           limits:
             cpu: 4
