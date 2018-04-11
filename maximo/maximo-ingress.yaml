@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: maximo
   annotations:
+  # 增加annotations：配置session affinity
     ingress.kubernetes.io/affinity: "cookie"
     ingress.kubernetes.io/session-cookie-name: "route"
     ingress.kubernetes.io/session-cookie-hash: "sha1"
