@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: maximo-config
+  labels:
+    k8s-app: maximo
+data:
+  USER_MEM_ARGS: "-Xms1024m -Xmx4096m -XX:MaxPermSize=512m"

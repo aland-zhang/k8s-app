@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: maximo
+  labels:
+    name: maximo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: maximo-apps
+    spec:
+      imagePullSecrets:
+      - name: harborkey  
+      containers:
+      - name: maximo-apps
+        image: harbor.gdphdc.com/maximo/maximo:v0.0.8     
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: USER_MEM_ARGS
+            value: "-Xms1024m -Xmx4096m -XX:MaxPermSize=512m"
+        ports:
+        - containerPort: 7001
+        - containerPort: 13400
+        resources:
+          limits:
+            cpu: 4
+            memory: 6Gi
+          requests:
+            cpu: 1
+            memory: 2Gi
+        volumeMounts:
+        - name: logs
+          mountPath:  /u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/logs/
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: maximo-log-pvc

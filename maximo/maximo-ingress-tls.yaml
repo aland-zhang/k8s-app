@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: maximo
+  annotations:
+    ingress.kubernetes.io/affinity: "cookie"
+    ingress.kubernetes.io/session-cookie-name: "route"
+    ingress.kubernetes.io/session-cookie-hash: "sha1"
+spec:
+  tls:
+  - hosts: 
+    - eam.gdphdc.com
+    secretName: maximo
+  rules:
+  - host: eam.gdphdc.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: maximo-svc
+          servicePort: 80
