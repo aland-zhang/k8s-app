@@ -5,21 +5,38 @@ metadata:
   labels:
     name: maximo
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
         name: maximo-apps
     spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi 
+    spec:
       imagePullSecrets:
       - name: harborkey  
       containers:
       - name: maximo-apps
-        image: harbor.gdphdc.com/maximo/maximo:v0.0.8     
+        image: harbor.gdphdc.com/maximo/maximo:v0.0.9     
         imagePullPolicy: IfNotPresent
         env:
           - name: USER_MEM_ARGS
             value: "-Xms1024m -Xmx4096m -XX:MaxPermSize=512m"
+        livenessProbe:
+          httpGet:
+            path: /maximo
+            port: 7001
+          initialDelaySeconds: 180
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /maximo
+            port: 7001
+          initialDelaySeconds: 180
+          periodSeconds: 20
         ports:
         - containerPort: 7001
         - containerPort: 13400
@@ -30,10 +47,3 @@ spec:
           requests:
             cpu: 1
             memory: 2Gi
-        volumeMounts:
-        - name: logs
-          mountPath:  /u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/logs/
-      volumes:
-      - name: logs
-        persistentVolumeClaim:
-          claimName: maximo-log-pvc
