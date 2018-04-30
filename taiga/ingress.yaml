@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: taiga
+spec:
+#  tls:
+#  - hosts: 
+#    - taiga.gdphdc.com
+#    secretName: taiga-ingress-secret   
+  rules:
+  - host: taiga.gdphdc.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: taiga-svc
+          servicePort: 80

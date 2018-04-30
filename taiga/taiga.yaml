@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: taiga-web
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: taiga
+        tier: web
+    spec:
+      containers:
+      - name: front
+        image: benhutchins/taiga
+        ports:
+        - containerPort: 80
+          name: front
+        env:
+        - name: TAIGA_HOSTNAME
+          value: taiga.gdphdc.com
+        - name: TAIGA_SSL
+          value: "True"
+        - name: TAIGA_DB_HOST
+          value: "postgres.taiga"
+        - name: TAIGA_SSL_BY_REVERSE_PROXY
+          value: "True"  
+        - name: TAIGA_DB_USER
+          value: "taiga"   
+        - name: TAIGA_DB_NAME
+          value: "taiga"                    
+        - name: TAIGA_DB_PASSWORD
+          value: "PHp@ssw0rd"
+        volumeMounts:
+        - name: taigamedia-persistent-storage
+          mountPath: /usr/src/taiga-back/media
+      volumes:
+      - name: taigamedia-persistent-storage
+        persistentVolumeClaim:
+          claimName: taigamedia-pv-claim

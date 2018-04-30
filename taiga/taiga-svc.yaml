@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: taiga-svc
+spec:
+  ports:
+    - protocol: TCP
+      name: front
+      port: 80
+      targetPort: 80
+  selector:
+    app: taiga
+    tier: web
+  type: NodePort

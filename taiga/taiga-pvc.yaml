@@ -1,0 +1,14 @@
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: taigamedia-pv-claim
+  labels:
+    app: taiga
+spec:
+  storageClassName: nfs-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
