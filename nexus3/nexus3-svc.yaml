@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: nexus3
+  name: nexus3
+  namespace: nexus
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 8081
+  selector:
+    app: nexus3
