@@ -13,3 +13,6 @@
 	--docker-server=harbor.gdphdc.com \ 
 	--docker-username=admin --docker-password=Harbor12345 \
 	--docker-email=deerjoe@qq.com -n <NameSpace名>
+
+ 启动 Dashboard
+      nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
