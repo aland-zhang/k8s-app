@@ -1,0 +1,984 @@
+    1  cd ..
+    2  ls
+    3  cd ..
+    4  ls
+    5  cd ca-trust/
+    6  ls
+    7  cd source/
+    8  ls
+    9  cd anchors/
+   10  ls
+   11  update-ca-trust force-enable
+   12  update-ca-trust extract
+   13  service docker restart
+   14  docker login harbor.gdphdc.com
+   15  ls
+   16  cd ~
+   17  ls
+   18  cd Dockerfile/
+   19  ls
+   20  cd jenkins-with-ca/
+   21  touch Dockerfile
+   22  vi Dockerfile 
+   23  mkdir certs
+   24  cp /certs/ca.pem certs/ca.crt
+   25  docker build -t .
+   26  docker build --help
+   27  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   28  vi Dockerfile 
+   29  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   30  vi Dockerfile 
+   31  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   32  vi Dockerfile 
+   33  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   34  vi Dockerfile 
+   35  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   36  vi Dockerfile 
+   37  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   38  vi Dockerfile 
+   39  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.1 .
+   40  docker push harbor.gdphdc.com/jenkins/jenkins
+   41  ping harbor.gdphdc.com
+   42  ping 10.45.10.50
+   43  docker push harbor.gdphdc.com/jenkins/jenkins
+   44  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   45  systemctl restart nscd
+   46  nscd
+   47  yum install nscd
+   48  systemctl nscd restart
+   49  systemctl restart nscd
+   50  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   51  docker push https://harbor.gdphdc.com/jenkins/jenkins:0.1 
+   52  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   53  docker login harbor.gdphdc.com
+   54  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   55  docker tag jenkins:latest harbor.gdphdc.com/library/jenkins:latest
+   56  docker push harbor.gdphdc.com/library/jenkins:latest 
+   57  /usr/sbin/sestatus -v 
+   58  vi /etc/selinux/config 
+   59  reboot
+   60  nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
+   61  kubectl get nodes
+   62  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   63  docker login harbor.gdphdc.com
+   64  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   65  ls
+   66  docker push harbor.gdphdc.com/jenkins/jenkins:0.1 
+   67  ls
+   68  kubectl get nodes
+   69  htop
+   70  top
+   71  htop
+   72  kubectl get nodes
+   73  ls
+   74  nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
+   75  cat /etc/pki/ca-trust/source/anchors/app.crt 
+   76  ls
+   77  cd Dockerfile/jenkins-with-ca/
+   78  l
+   79  ls
+   80  vi Dockerfile 
+   81  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.2 .
+   82  vi Dockerfile 
+   83  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.2 .
+   84  vi Dockerfile 
+   85  docker build -t harbor.gdphdc.com/jenkins/jenkins:0.2 .
+   86  docker push harbor.gdphdc.com/jenkins/jenkins:0.2 .
+   87  docker push harbor.gdphdc.com/jenkins/jenkins:0.2
+   88  docker login harbor.gdphdc.com
+   89  docker push harbor.gdphdc.com/jenkins/jenkins:0.2
+   90  ls
+   91  cat /etc/resolv.conf
+   92  cd Dockerfile/
+   93  git commit -m 'Jenkins镜像打包CA证书'
+   94  git remote add origin https://gogs.gdphdc.com/phadmin/Dockerfile.git
+   95  git push -u origin master
+   96  git init
+   97  git add .
+   98  git commit -m 'Jenkins镜像打包CA证书'
+   99  git remote add origin https://gogs.gdphdc.com/phadmin/Dockerfile.git
+  100  git push -u origin master
+  101  mkdir weblogic-10g
+  102  cd weblogic-10g/
+  103  ls
+  104  cd Dockerfile/
+  105  ls
+  106  cd weblogic-10g/
+  107  ls
+  108  cd ..
+  109  git push -u origin master
+  110  git add .
+  111  git push -u origin master
+  112  ls
+  113  mkdir admin-eap
+  114  cd admin-eap/
+  115  touch Dockerfile
+  116  vi Dockerfile 
+  117  docker build -t harbor.gdphdc.com/admineap/admineap:0.0.1
+  118  docker build -t harbor.gdphdc.com/admineap/admineap:0.0.1 .
+  119  ls -a
+  120  cd ..
+  121  ls
+  122  ls -a
+  123  cd admin-eap/
+  124  vi .gitignore
+  125  ls
+  126  vi .gitignore
+  127  vi Dockerfile 
+  128  docker build -t harbor.gdphdc.com/admineap/admineap:0.0.1 .
+  129  docker login harbor.gdphdc.com
+  130  ls
+  131  docker push harbor.gdphdc.com/admineap/admineap:0.0.1 
+  132  cd ..
+  133  sl
+  134  ls
+  135  git push -u origin master
+  136  git add .
+  137  git push -u origin master
+  138  git commit -m "增加Admin-eap"
+  139  git push -u origin master
+  140  ls
+  141  cd ..
+  142  ls
+  143  cd yaml/
+  144  ls
+  145  cd admin-eap/
+  146  ls
+  147  mkdir eap
+  148  docker push harbor.gdphdc.com/admineap/admineap:0.0.1 
+  149  curl -I -X DELETE https://harbor.gdphdc.com/v2/admineap/manifests/sha256:8c8bd2659f51a6c815149580805b6f2519b5c7a9e71cfb948159a86790eb5e19
+  150  docker push harbor.gdphdc.com/admineap/admineap:0.0.1 
+  151  docker tag harbor.gdphdc.com/admineap/admineap:0.0.1  harbor.gdphdc.com/admineap/admineap:dev
+  152  docker push harbor.gdphdc.com/admineap/admineap:dev
+  153  docker login harbor.gdphdc.com
+  154  docker push harbor.gdphdc.com/admineap/admineap:dev
+  155  docker push harbor.gdphdc.com/admineap/admineap:0.0.1 
+  156  ls
+  157  cd yaml/
+  158  ls
+  159  git push -u origin master
+  160  git pull
+  161  vi gogs/gogs/gogs.deploy.yaml
+  162  git push -u origin master
+  163  ls
+  164  cd ..
+  165  ls
+  166  cd yaml/
+  167  ls
+  168  cd admin-eap/
+  169  ls
+  170  cd pv/
+  171  ls
+  172  kubectl apply -f redis.pv.yaml -n eap
+  173  kubectl apply -f redis.pvc.yaml -n eap
+  174  kubectl apply -f mysql.pvc.yaml -n eap
+  175  kubectl apply -f mysql.pv.yaml -n eap
+  176  kubectl apply -f eap.pv.yaml -n eap
+  177  kubectl apply -f eap.pvc.yaml -n eap
+  178  ls
+  179  cd ..
+  180  ls
+  181  cd mysql/
+  182  ls
+  183  kubectl apply -f mysql.cm.yaml -n eap
+  184  kubectl apply -f mysql.deploy.yaml -n eap
+  185  kubectl apply -f mysql.svc.yaml -n eap
+  186  ls
+  187  cd ..
+  188  ls
+  189  cd redis/
+  190  ls
+  191  kubectl apply -f redis-deploy.yaml -n eap
+  192  kubectl apply -f redis-svc.yaml -n eap
+  193  ls
+  194  cd ..
+  195  docker push harbor.gdphdc.com/admineap/admineap:dev 
+  196  docker push harbor.gdphdc.com/admineap/admineap:dev ls
+  197  ls
+  198  cd eap
+  199  ls
+  200  cd ..
+  201  cd eap
+  202  ls
+  203  cd ..
+  204  cd admin-eap
+  205  rls
+  206  ls
+  207  cd ..
+  208  ls
+  209  cd ..
+  210  ls
+  211  cd Dockerfile/
+  212  ls
+  213  cd admin-eap/
+  214  ls
+  215  vi Dockerfile 
+  216  git add .
+  217  git commit -m "修改基础镜像为tomcat"
+  218  git push origin master 
+  219  ls
+  220  cd /certs/
+  221  ls
+  222  openssl pkcs12 -export -inkey app-key.pem -in app.pem out app.pfx
+  223  openssl pkcs12 -export
+  224  openssl pkcs12 -export -inkey ca-key.pem -in app.pem -out app.pfx
+  225  ls
+  226  cd /certs/
+  227  openssl pkcs12 -export -inkey ca-key.pem -in ca.pem -out ca.pfx
+  228   kubectl create secret docker-registry harborkey --docker-server=harbor.gdphdc.com --docker-username=admin --docker-password=Harbor12345 --docker-email=deerjoe@qq.com -n eap
+  229  kubectl create secret tls --
+  230  kubectl create secret tls eap-ingress-secret --key=/certs/app-key.pem --cert=/certs/app.pem -n eap
+  231  kubectl delete deployment eap -n eap 
+  232  kubectl delete pod eap-mysql-6969d44845-668zr -n eap 
+  233  nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
+  234  ls
+  235  yaml/
+  236  cd yaml/
+  237  ls
+  238  cd nfs/
+  239  ls
+  240  vi ra
+  241  vi rbac.yaml 
+  242  cd ..
+  243  git add .
+  244  git diff
+  245  git commit -m '修改nfs插件RBAC,适合k8s1.8'
+  246  git diff
+  247  git push origin master 
+  248  git pull
+  249  ls
+  250  cd nfs/
+  251  ls
+  252  vi rbac.yaml 
+  253  cd ..
+  254  git add .
+  255  git diff
+  256  git commit -m '修改nfs插件RBAC,适合k8s1.8'
+  257  git push origin master 
+  258  ls
+  259  cd nfs/
+  260  vi nfs-class.yaml 
+  261  cd ..cd .
+  262  git commit -m '修改nfs地址'
+  263  git commit -am '修改nfs插件RBAC,适合k8s1.8'
+  264  git push origin master 
+  265  cd nfs/
+  266  ls
+  267  kubectl delete -f rbac.yaml -n kube-system 
+  268  cd ..
+  269  ls
+  270  cd admin-eap/
+  271  ls
+  272  cd pv/
+  273  ls
+  274  vi eap.pvc.yaml 
+  275  kubectl apply -f eap.pvc.yaml -n eap 
+  276  vi eap.pvc.yaml 
+  277  kubectl apply -f eap.pvc.yaml -n eap 
+  278  kubectl detele -f eap.pvc.yaml -n eap 
+  279  kubectl delete -f eap.pvc.yaml -n eap 
+  280  kubectl apply -f eap.pvc.yaml -n eap 
+  281  cd ..
+  282  cd nfs/
+  283  ls
+  284  kubectl delete -f rbac.yaml -n kube-system 
+  285  kubectl apply -f rbac.yaml -n kube-system 
+  286  cd ..
+  287  cd eap
+  288  cd admin-eap/
+  289  ls
+  290  cd pv/
+  291  ls
+  292  kubectl apply -f eap.pvc.yaml -n eap 
+  293  vi eap.pvc.yaml 
+  294  cd ..
+  295  cd nfs/
+  296  ls
+  297  vi rbac.yaml 
+  298  kubectl delete -f rbac.yaml -n kube-system 
+  299  vi rbac.yaml 
+  300  kubectl apply -f rbac.yaml
+  301  kubectl get serviceAccount
+  302  kubectl get serviceAccount -n kube-system 
+  303  kubectl describe serviceAccount nfs-provisioner -n kube-system 
+  304  cd yaml/nfs/
+  305  ls
+  306   kubectl delete -f rbac.yaml -n kube-system
+  307   kubectl apply -f rbac.yaml -n kube-system
+  308   kubectl delete -f rbac.yaml -n kube-system
+  309   kubectl apply -f rbac.yaml -n kube-system
+  310   kubectl get ClusterRole
+  311   kubectl get ClusterRole -n kube-system 
+  312   kubectl delete -f rbac.yaml -n kube-system
+  313  kubectl describe clusterrole system:persistent-volume-provisioner
+  314   kubectl apply -f rbac.yaml -n kube-system
+  315   kubectl delete -f rbac.yaml -n kube-system
+  316   kubectl apply -f rbac.yaml -n kube-system
+  317   kubectl get serviceAccount
+  318   kubectl get serviceAccount -n kube-system
+  319   kubectl describe serviceAccount persistent-volume-binder -n kube-system
+  320   kubectl describe serviceAccount nfs-provisioner -n kube-system
+  321   kubectl delete -f rbac.yaml -n kube-system
+  322  ls
+  323   kubectl delete -f nfs-class.yaml -n kube-system
+  324   kubectl delete -f nfs-client.yaml.yaml -n kube-system
+  325   kubectl delete -f nfs-client.yaml -n kube-system
+  326  cd ..
+  327   kubectl apply -f nfs/* -n kube-system
+  328   kubectl apply -f nfs/ -n kube-system
+  329  cd ..
+  330  ls
+  331   kubectl delete -f nfs/ -n kube-system
+  332  cd yaml/
+  333   kubectl delete -f nfs/ -n kube-system
+  334   kubectl apply -f nfs/ -n kube-system
+  335  ls
+  336  cd nfs/
+  337  ls
+  338  cat nfs-client.yaml 
+  339  ping 10.45.10.66
+  340  ping 10.45.10.149
+  341  ping 10.45.10.139
+  342  ping 10.45.10.138
+  343  ping 10.45.10.137
+  344  ping 10.45.10.136
+  345  ping 10.45.10.135
+  346  ping 10.45.10.134
+  347  ping 10.45.10.133
+  348  ls
+  349  cd yaml/
+  350  ls
+  351  git pull
+  352  ls
+  353  cd nfs/
+  354  ls
+  355  cd ..
+  356  kubectl apply -f nfs/ -n kube-system 
+  357  kubectl delete -f nfs/ -n kube-system 
+  358  cd nfs/
+  359  ls
+  360  vi rbac.yaml 
+  361  kubectl apply -f nfs/ -n kube-system 
+  362  cd ..
+  363  kubectl apply -f nfs/ -n kube-system 
+  364  kubectl delete -f nfs/ -n kube-system 
+  365  kubectl apply -f nfs/ -n kube-system 
+  366  kubectl delete -f nfs/ -n kube-system 
+  367  kubectl apply -f nfs/ -n kube-system 
+  368  kubectl delete -f nfs/ -n kube-system 
+  369  kubectl apply -f nfs/
+  370  kubectl delete -f nfs/ -n kube-system 
+  371  kubectl delete -f nfs/
+  372  kubectl apply -f nfs/ -n kube-system 
+  373  git add .
+  374  git commit -m "修改nfs storageclass 参数"
+  375  git push -u origin master 
+  376  ls
+  377  cd admin-eap/
+  378  ls
+  379  cd pv/
+  380  ls
+  381  vi eap.pvc.yaml 
+  382  kubectl apply -f mysql.pvc.yaml -n eap 
+  383  kubectl apply -f redis.pvc.yaml -n eap 
+  384  kubectl delete -f redis.pvc.yaml -n eap 
+  385  kubectl apply -f redis.pvc.yaml -n eap 
+  386  cd ..
+  387  ls
+  388  cd pv
+  389  ls
+  390  rm eap.pv.yaml 
+  391  rm -f mysql.pv.yaml 
+  392  rm -f redis.pv.yaml 
+  393  cd ..
+  394  git add .
+  395  git add --all
+  396  git commit -m "删除pv"
+  397  kubectl delete -f harbor/ -n harbor 
+  398  kubectl delete -f harbor/* -n harbor 
+  399  kubectl delete -f harbor/pv/ -n harbor 
+  400  kubectl apply -f harbor/ -n harbor 
+  401  kubectl apply -f harbor/pv -n harbor 
+  402  kubectl delete -f harbor/pv/ -n harbor 
+  403  kubectl apply -f harbor/pv -n harbor 
+  404  docker images
+  405  ls
+  406  cd jenkins/
+  407  ls
+  408  vi jenkins-deploy.yaml 
+  409  rm jenkins-pv.yaml 
+  410  vi jenkins-pvc.yaml 
+  411  cat /etc/sysconfig/network-scripts/ifcfg-ens160 
+  412  ls
+  413  cd Dockerfile/
+  414  ls
+  415  git push
+  416  cd ..
+  417  rm -Rf Dockerfile/
+  418  git clone http://gogs.gdphdc.com/phadmin/Dockerfile.git
+  419  git clone https://gogs.gdphdc.com/phadmin/Dockerfile.git
+  420  ls
+  421  cd Dockerfile/
+  422  ls
+  423  cd weblogic11g/
+  424  ls
+  425  cd 1036-domain
+  426  ls
+  427  cd container-scripts/
+  428  ls
+  429  vi create-wls-domain.py 
+  430  cd ..
+  431  docker build -t harbor.gdphdc.com/weblogic/1036-domain:v0.0.1 .
+  432  htop
+  433  yum install htop
+  434  ls
+  435  cd yaml/
+  436  ls
+  437  git diff
+  438  git commit -m '修改Jenkins PV'
+  439  git commit -a -m '修改Jenkins PV'
+  440  cd ~
+  441  ls
+  442  vi dashboard.sh
+  443  nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
+  444  ls
+  445  cd yaml/jenkins/
+  446  kubectl  apply  -f jenkins-pvc.yaml 
+  447  kubectl  apply  -f jenkins-pvc.yaml  -n jenkins 
+  448  kubectl  apply  -f jenkins-deploy.yaml  -n jenkins 
+  449  vi jenkins-deploy.yaml 
+  450  kubectl  apply  -f jenkins-deploy.yaml  -n jenkins 
+  451  cd .
+  452  cd ..
+  453  ls
+  454  git commit -a -m '修改Jenkins PV'
+  455  git push -u origin master 
+  456  ls
+  457  mkdir mysql
+  458  cd mysql/
+  459  ls
+  460  vi mysql-cm.yaml
+  461  vi 
+  462  vi mysql-svc.yaml
+  463  ls
+  464  kubectl exec -it registry-c5f6f84dd-bxjj4 -n harbor /bin/bash
+  465  cd yaml/mysql/
+  466  cd ..
+  467  ls
+  468  kubectl create namespace mysql
+  469  kubectl apply -f mysql/ -n mysql 
+  470  kubectl delete -f mysql/ -n mysql 
+  471  kubectl apply -f mysql/ -n mysql 
+  472  kubectl delete -f mysql/ -n mysql 
+  473  kubectl apply -f mysql/ -n mysql 
+  474  kubectl exec -n harbor  -it registry garbage-collect /etc/registry/config.yml
+  475  registry-c5f6f84dd-bxjj4
+  476  kubectl exec -n harbor  -it registry-c5f6f84dd-bxjj4 registry garbage-collect /etc/registry/config.yml
+  477  ls
+  478  kubectl exec -n harbor  -it registry-c5f6f84dd-bxjj4 registry garbage-collect /etc/registry/config.yml
+  479  ls
+  480  cd yaml/
+  481  ls
+  482  cd mysql/
+  483  ls
+  484  vi mysql-deploy.yaml 
+  485  kubectl apply -f mysql-deploy.yaml -n mysql 
+  486  cd ..
+  487  kubectl delete -f mysql/ -n mysql 
+  488  kubectl apply -f mysql/ -n mysql 
+  489  git diff
+  490  git add
+  491  git add .
+  492  git diff
+  493  git commit -m '增加Mysql主从复制配置'
+  494  git push -u origin master 
+  495  kubectl drain node3 --force --delete-local-data --ignore-daemonsets
+  496  kubectl uncordon node3
+  497  kubectl drain node1 --force --delete-local-data --ignore-daemonsets
+  498  kubectl uncordon node1
+  499  kubectl exec mysql-2 -n mysql -c mysql -- mv /usr/bin/mysql /usr/bin/mysql.off
+  500  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql <<EOFCREATE DATABASE test;
+  501  CREATE TABLE test.messages (message VARCHAR(250));
+  502  INSERT INTO test.messages VALUES ('hello');
+  503  EOF
+  504  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql.mysql <<EOFCREATE DATABASE test;
+  505  CREATE TABLE test.messages (message VARCHAR(250));
+  506  INSERT INTO test.messages VALUES ('hello');
+  507  EOF
+  508  kubectl run mysql-client-loop --image=mysql:5.7 -i -t --rm --restart=Never -->   bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done"
+  509  kubectl run mysql-client-loop -n mysql --image=mysql -i -t --rm --restart=Never -->   bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done"
+  510  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql <<EOFCREATE DATABASE test;
+  511  CREATE TABLE test.messages (message VARCHAR(250));
+  512  INSERT INTO test.messages VALUES ('hello');
+  513  EOF
+  514  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql.mysql <<EOFCREATE DATABASE test;
+  515  CREATE TABLE test.messages (message VARCHAR(250));
+  516  INSERT INTO test.messages VALUES ('hello');
+  517  EOF
+  518  ;
+  519  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql <<EOFCREATE DATABASE test;
+  520  CREATE TABLE test.messages (message VARCHAR(250));
+  521  INSERT INTO test.messages VALUES ('hello');
+  522  EOF
+  523  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql <<EOF
+  524  ;
+  525  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql <<EOFCREATE DATABASE test;
+  526  CREATE TABLE test.messages (message VARCHAR(250));
+  527  INSERT INTO test.messages VALUES ('hello');
+  528  EOF
+  529  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql.mysql <<EOFCREATE DATABASE test;
+  530  CREATE TABLE test.messages (message VARCHAR(250));
+  531  INSERT INTO test.messages VALUES ('hello');
+  532  EOF
+  533  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-0.mysql.mysql <<EOFCREATE DATABASE test;
+  534  CREATE TABLE test.messages (message VARCHAR(250));
+  535  INSERT INTO test.messages VALUES ('hello');
+  536  EOF
+  537  kubectl run mysql-client-loop --image=mysql:5.7 -i -t --rm --restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read.mysql -e 'SELECT @@server_id,NOW()'; done"
+  538  kubectl exec -it  mysql-client bash
+  539  ls
+  540  cd yaml/
+  541  ls
+  542  cd mysql/
+  543  ls
+  544  kubectl delete -f ./ -n mysql 
+  545  kubectl exec -it  mysql-client bash
+  546  cd yaml/
+  547  cd mysql/
+  548  ls
+  549  cd yaml/
+  550  ls
+  551  kubectl delete -f mysql/
+  552  ip addr
+  553  ls
+  554  cd yaml/
+  555  git pull 
+  556  git add .
+  557  git commit -m '修改mysql 设置，增加nodePort提供外部访问'
+  558  git push -u origin master 
+  559  ls
+  560  mkdir maximo
+  561  cd maximo/
+  562  kubectl delete ns heketi 
+  563  ls
+  564  ls
+  565  cd yaml/
+  566  ls
+  567  cd maximo/
+  568  ls
+  569  touch maximo-svc.yaml
+  570  touch maximo-cm.yaml
+  571  touch maximo-deploy.yaml
+  572  ls
+  573  cd yaml/
+  574  cd maximo/
+  575  ls
+  576  touch maximo-ingress.yaml
+  577  cd ..
+  578  ls
+  579  kubectl create secret tls maximo maximo-ingress-secret --cert=certs/app.pem --key=certs/app-key.pem -n maximo
+  580  kubectl create ns maximo
+  581  kubectl create secret tls maximo maximo-ingress-secret --cert=certs/app.pem --key=certs/app-key.pem -n maximo
+  582  ls
+  583  kubectl apply -f maximo/ -n maximo 
+  584  touch maximo-pv.yaml
+  585  mv maximo-pv.yaml maximo/maximo-pv.yaml 
+  586  kubectl apply -f maximo/ -n maximo 
+  587  kubectl delete -f maximo/ -n maximo 
+  588  kubectl apply -f maximo/ -n maximo 
+  589  cd ..
+  590  history 10000 > his.txt
+  591  history 10000 
+  592  history 10000 |grep harborkey
+  593  kubectl create secret docker-registry harborkey --docker-server=harbor.gdphdc.com --docker-username=admin --docker-password=Harbor12345 --docker-email=deerjoe@qq.com -n maximo
+  594  ls
+  595  cd yaml/
+  596  ls
+  597  kubectl apply -f maximo/ -n maximo 
+  598  ls
+  599  cd yaml/
+  600  ls
+  601  cd maximo/
+  602  ls
+  603  vi maximo-deploy.yaml 
+  604  vi maximo-svc.yaml 
+  605  kubectl apply -f ../maximo/ -n maximo 
+  606  ls
+  607  cd yaml/
+  608  ls
+  609  kubectl apply -f mysql/ -n mysql 
+  610  kubectl delete -f mysql/ -n mysql 
+  611  kubectl apply -f mysql/ -n mysql 
+  612  kubectl delete -f mysql/ -n mysql 
+  613  kubectl apply -f mysql/ -n mysql 
+  614  kubectl delete -f mysql/ -n mysql 
+  615  kubectl apply -f mysql/ -n mysql 
+  616  kubectl delete -f mysql/ -n mysql 
+  617  kubectl apply -f mysql/ -n mysql 
+  618  kubectl delete -f mysql/ -n mysql 
+  619  kubectl apply -f mysql/ 
+  620  kubectl delete -f mysql/ -n mys
+  621  kubectl apply -f mysql/
+  622  ls
+  623  cd maximo/
+  624  ls
+  625  vi maximo-ingress.yaml 
+  626  kubectl get secret all -n maximo 
+  627  kubectl get secret  -n maximo 
+  628  vi maximo-ingress.yaml 
+  629  kubectl apply -f ../maximo/ -n maximo 
+  630  ls
+  631  vi maximo-deploy.yaml 
+  632  kubectl apply -f ../maximo/ -n maximo 
+  633  ls
+  634  vi maximo-deploy.yaml 
+  635  kubectl apply -f maximo-deploy.yaml -n mysql 
+  636  kubectl apply -f maximo-deploy.yaml -n maximo 
+  637  vi maximo-deploy.yaml 
+  638  kubectl apply -f maximo-deploy.yaml -n maximo 
+  639  kubectl drain node4 --force --delete-local-data --ignore-daemonsets
+  640  kubectl get nodes
+  641  kubectl uncordon node4
+  642  kubectl drain node3 --force --delete-local-data --ignore-daemonsets
+  643  kubectl uncordon node4
+  644  kubectl uncordon node3
+  645  kubectl drain node2 --force --delete-local-data --ignore-daemonsets
+  646  kubectl l uncordon node2
+  647  kubectl  uncordon node2
+  648  ls
+  649  kubectl delete -f maximo-deploy.yaml -n maximo 
+  650  kubectl drain node1 --force --delete-local-data --ignore-daemonsets
+  651  ls
+  652  cd yaml/
+  653  ls
+  654  cd maximo/
+  655  ls
+  656  vi maximo-ingress.yaml 
+  657  kubectl apply -f maximo-ingress.yaml -n maximo 
+  658  vi maximo-ingress.yaml 
+  659  kubectl apply -f maximo-ingress.yaml -n maximo 
+  660  vi maximo-ingress.yaml 
+  661  cp maximo-ingress.yaml maximo-ingress-tls.yaml 
+  662  vi maximo-ingress-tls.yaml 
+  663  kubectl delete -f maximo-ingress.yaml -n maximo 
+  664  kubectl apply -f maximo-ingress-tls.yaml -n maximo 
+  665  kubectl apply -f maximo-ingress.yaml -n maximo 
+  666  cd ..
+  667  git add .
+  668  commit -m '增加Maximo配置，由于maximo会使用Ajax请求http资源，无法使用tls ingress'
+  669  git commit -m '增加Maximo配置，由于maximo会使用Ajax请求http资源，无法使用tls ingress'
+  670  git pull
+  671  git push -u origin master 
+  672  cd yaml/
+  673  ls
+  674  kubectl apply -f maximo/ -n maximo 
+  675  ls
+  676  cd maximo/
+  677  ls
+  678  vi maximo-ingress.yaml 
+  679  vi maximo-svc.yaml 
+  680  kubectl apply -f maximo-svc.yaml -n maximo 
+  681  vi maximo-svc.yaml 
+  682  kubectl apply -f maximo-svc.yaml -n maximo 
+  683  vi maximo-ingress.yaml 
+  684  kubectl apply -f maximo-ingress.yaml -n maximo 
+  685  ls
+  686  cd yaml/
+  687  ls
+  688  cd maximo/
+  689  ls
+  690  vi maximo-deploy.yaml 
+  691  kubectl apply -f maximo-deploy.yaml -n maximo 
+  692  vi maximo-deploy.yaml 
+  693  kubectl apply -f maximo-deploy.yaml -n maximo 
+  694  vi maximo-deploy.yaml \
+  695  vi maximo-deploy.yaml
+  696  kubectl apply -f maximo-deploy.yaml -n maximo 
+  697  vi maximo-deploy.yaml
+  698  kubectl apply -f maximo-deploy.yaml -n maximo 
+  699  vi maximo-deploy.yaml
+  700  kubectl apply -f maximo-deploy.yaml -n maximo 
+  701  vi maximo-deploy.yaml
+  702  kubectl apply -f maximo-deploy.yaml -n maximo 
+  703  vi maximo-deploy.yaml
+  704  kubectl apply -f maximo-deploy.yaml -n maximo 
+  705  vi maximo-deploy.yaml 
+  706  kubectl apply -f maximo-deploy.yaml -n maximo 
+  707  vi maximo-deploy.yaml 
+  708  kubectl apply -f maximo-deploy.yaml -n maximo 
+  709  cd ..
+  710  git add .
+  711  cd maximo/
+  712  ls
+  713  kubectl delete -f maximo-cm.yaml -n maximo 
+  714  kubectl delete -f maximo-pvc.yaml -n maximo 
+  715  cd ..
+  716  git add .
+  717  git commit -m "增加maximo 的livenessProbe探针和readnessProbe探针，删除关联pvc&logs的持久化"
+  718  git push -u origin master 
+  719  git pull
+  720  git push -u origin master 
+  721  git pull
+  722  cd maximo/
+  723  ls
+  724  kubectl apply -f maximo-deploy.yaml -n maximo 
+  725  ls
+  726  cd yaml/
+  727  ls
+  728  cd maximo/
+  729  ls
+  730  vi maximo-
+  731  vi maximo-deploy.yaml 
+  732  vi maximo-ingress.yaml 
+  733  kubectl apply -f maximo-svc.yaml -n maximo 
+  734  vi maximo-ingress.yaml 
+  735  kubectl apply -f maximo-svc.yaml -n maximo 
+  736  vi maximo-svc.yaml 
+  737  kubectl apply -f maximo-svc.yaml -n maximo 
+  738  vi maximo-svc.yaml 
+  739  kubectl apply -f maximo-svc.yaml -n maximo 
+  740  kubectl apply -f maximo-ingress.yaml -n maximo 
+  741  vi maximo-svc.yaml 
+  742  kubectl apply -f maximo-svc.yaml -n maximo 
+  743  vi maximo-ingress.yaml 
+  744  kubectl apply -f maximo-ingress.yaml -n maximo 
+  745  vi maximo-ingress.yaml 
+  746  kubectl apply -f maximo-ingress.yaml -n maximo 
+  747  vi maximo-svc.yaml 
+  748  kubectl apply -f maximo-svc.yaml -n maximo 
+  749  vi maximo-ingress.yaml 
+  750  kubectl apply -f maximo-ingress.yaml -n maximo 
+  751  vi maximo-ingress.yaml 
+  752  kubectl apply -f maximo-ingress.yaml -n maximo 
+  753  vi maximo-ingress.yaml 
+  754  vi maximo-deploy.yaml 
+  755  cd ..
+  756  git add .
+  757  git commit "实践证明，maximo k8s只能有一个副本。负载均衡受session影响"
+  758  git commit -m "实践证明，maximo k8s只能有一个副本。负载均衡受session影响"
+  759  git push -u origin master 
+  760  kubectl delete ns mysql 
+  761  kubectl create ns sis
+  762  kubectl run mysql-client --image=mysql:5.7 -d --rm --restart=Never -n sis 
+  763  kubectl run mysql-client --image=mysql:5.7 --rm --restart=Never -n sis 
+  764  kubectl run mysql-client --image=mysql:5.7 --restart=Never -n sis 
+  765  kubectl exec -it mysql-client bash -n sis 
+  766  kubectl run mysql-client-loop --image=mysql:5.7 -i -t --rm --restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done" -n sis
+  767  kubectl run mysql-client-loop --image=mysql:5.7 -i --restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done" -n sis
+  768  kubectl run mysql-client-loop --image=mysql:5.7 -i-restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done" 
+  769  kubectl run mysql-client-loop --image=mysql:5.7 -restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done" 
+  770  kubectl run mysql-client-loop --image=mysql:5.7 --restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read -e 'SELECT @@server_id,NOW()'; done" 
+  771  ls
+  772  kube
+  773  ls
+  774  cd mysql/
+  775  ls
+  776  cd ..
+  777  kubectl delete -f mysql/ 
+  778  kubectl apply -f mysql/
+  779  kubectl run -n sis mysql-client-loop --image=mysql:5.7 --restart=Never --  bash -ic "while sleep 1; do mysql -h mysql-read.default -e 'SELECT @@server_id,NOW()'; done" 
+  780  kubectl  uncordon node1
+  781  kubectl drain node1 --force --delete-local-data --ignore-daemonsets
+  782  kubectl uncordon node1
+  783  cd yaml/
+  784  cd maximo/
+  785  ls
+  786  vi maximo-deploy.yaml 
+  787  kubectl apply -f maximo-deploy.yaml -n maximo 
+  788  nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
+  789  vi maximo-deploy.yaml 
+  790  kubectl apply -f maximo-deploy.yaml -n maximo 
+  791  ls
+  792  vi maximo-svc.yaml 
+  793  vi maximo-ingress.yaml 
+  794  kubectl apply -f ../maximo -n maximo 
+  795  kubectl delete -f ../maximo -n maximo 
+  796  kubectl apply -f ../maximo -n maximo 
+  797  kubectl delete -f ../maximo -n maximo 
+  798  ls
+  799  vi maximo-deploy.yaml 
+  800  kubectl delete -f ../maximo -n maximo 
+  801  cd ..
+  802  cd maximo/
+  803  kubectl apply -f ../maximo -n maximo 
+  804  kubectl delete -f ../maximo -n maximo 
+  805  ls
+  806  cd cd yaml/
+  807  cd yaml/
+  808  ls
+  809  mkdir taiga
+  810  cd taiga/
+  811  kubectl delete -f ./ -n taiga 
+  812  kubectl apply -f ./ -n taiga 
+  813  ls
+  814  cd yaml/
+  815  ls
+  816  cd taiga/
+  817  ls
+  818  vi taiga.yaml 
+  819  ls
+  820  kubectl create secret tls taiga-ingress-secret --cert=/certs/app.pem --key=/certs/app-key.pem -n taiga 
+  821  cd yaml/
+  822  cd taiga/
+  823  ls
+  824  kubectl apply -f ingress.yaml -n taiga 
+  825  ping taiga.gdphdc.com
+  826  kubectl apply -f taiga.yaml -n taiga 
+  827  ls
+  828  vi database-setup.yaml 
+  829  ls
+  830  cd yaml/
+  831  ls
+  832  cd taiga/
+  833  ls
+  834  vi conf.json
+  835  kubectl create configmap --
+  836  kubectl create configmap taiga-configmap --from-file=conf.json -n taiga 
+  837  ls
+  838  vi conf.json 
+  839  vi database-setup.yaml 
+  840  vi taiga.yaml 
+  841  vi database-setup.yaml 
+  842  kubectl delete -f ./ -n taiga 
+  843  kubectl apply -f namespace.yaml -n taiga 
+  844  ls
+  845  kubectl apply -f ingress.yaml -n taiga 
+  846  kubectl apply -f postgres.yaml -n taiga 
+  847  kubectl apply -f database-setup.yaml -n taiga 
+  848  kubectl create secret tls taiga-ingress-secret --cert=/certs/app.pem --key=/certs/app-key.pem -n taiga 
+  849  kubectl apply -f taiga.yaml -n taiga 
+  850  kubectl delete -f ingress.yaml -n taiga 
+  851  kubectl apply -f ingress.yaml -n taiga 
+  852  kubectl delete -f ingress.yaml -n taiga 
+  853  kubectl apply -f ingress.yaml -n taiga 
+  854  kubectl delete -f ingress.yaml -n taiga 
+  855  kubectl delete -f taiga.yaml -n taiga 
+  856  kubectl apply -f taiga.yaml -n taiga 
+  857  kubectl apply -f ingress.yaml -n taiga 
+  858  ls
+  859  cd ..
+  860  mv taiga/ taiga2/
+  861  cp taiga2/ taiga/
+  862  cp -Rf taiga2/ taiga/
+  863  cd taiga
+  864  cd yaml/
+  865  cd taiga2/
+  866  rm conf.json 
+  867  kubectl delete -f ./ -n taiga 
+  868  cd ..
+  869  cd taiga
+  870  kubectl apply -f ./ -n taiga 
+  871  kubectl apply -f taiga.yaml -n taiga 
+  872  kubectl apply -f ingress.yaml -n taiga 
+  873  ls
+  874  cd yaml/
+  875  ta
+  876  cd taiga
+  877  ls
+  878  vi taiga.yaml 
+  879  kubectl create secret tls taiga-ingress-secret --cert=/certs/app.pem --key=/certs/app-key.pem -n taiga 
+  880  kubectl delete -f taiga.yaml -n taiga 
+  881  kubectl delete -f ingress.yaml -n taiga 
+  882  kubectl apply -f ingress.yaml -n taiga 
+  883  kubectl apply -f taiga -n taiga 
+  884  kubectl apply -f taiga.yaml -n taiga 
+  885  ls
+  886  kubectl get all
+  887  htop
+  888  exit
+  889  ls
+  890  cd yaml/
+  891  ls
+  892  rm taiga2
+  893  rm -Rf taiga2
+  894  ls
+  895  git add .
+  896  git commit -m "增加看板taiga应用"
+  897  git push -u origin master 
+  898  ls
+  899  cd taiga/
+  900  ls
+  901  vi taiga.yaml 
+  902  kubectl apply -f taiga.yaml -n taiga 
+  903  kubectl delete -f taiga.yaml -n taiga 
+  904  kubectl apply -f taiga.yaml -n taiga 
+  905  vi taiga.yaml 
+  906  kubectl apply -f taiga.yaml -n taiga 
+  907  vi taiga.yaml 
+  908  ls
+  909  vi local.py
+  910  ls
+  911  cd yaml/
+  912  ls
+  913  cd taiga/
+  914  ls
+  915  vi taiga.yaml 
+  916  kubectl apply -f taiga.yaml -n taiga 
+  917  ssh 10.45.10.212
+  918  docker pull namshi/smtp
+  919  ssh 10.45.10.212
+  920  ls
+  921  cd yaml/
+  922  ls
+  923  cd ya
+  924  cd taiga/
+  925  ls
+  926  vi taiga.yaml 
+  927  kubectl apply -f taiga.yaml -n taiga 
+  928  ls
+  929  cd yaml/
+  930  ls
+  931  mkdir nexus3
+  932  cd nexus3/
+  933  vi namespace.yaml
+  934  vi nexus3-deploy.yaml
+  935  vi nexus3-pvc.yaml
+  936  vi nexus3-deploy.yaml 
+  937  vi nexus3-pvc.yaml 
+  938  vi nexus3-svc.yaml
+  939  vi ingress.yaml
+  940  vi ingress.yaml 
+  941  kubectl apply -f namespace.yaml 
+  942  kubectl apply -f nexus3-deploy.yaml -n nexus 
+  943  vi nexus3-deploy.yaml 
+  944  kubectl apply -f nexus3-deploy.yaml -n nexus 
+  945  vi nexus3-deploy.yaml 
+  946  kubectl apply -f nexus3-deploy.yaml -n nexus 
+  947  kubectl apply -f nexus3-pvc.yaml -n nexus 
+  948  kubectl apply -f ingress.yaml -n nexus 
+  949  ls
+  950  vi ingress.yaml 
+  951  vi nexus3-svc.yaml 
+  952  kubectl apply -f nexus3-svc.yaml -n nexus 
+  953  vi nexus3-svc.yaml 
+  954  vi ingress.yaml 
+  955  kubectl delete -f ingress.yaml -n nexus 
+  956  kubectl apply -f ingress.yaml -n nexus 
+  957  cd ..
+  958  git add .
+  959  git commit -m "增加nexus maven包管理工具"
+  960  git push -u origin master 
+  961  ls
+  962  cd yaml/
+  963  ls
+  964  kubectl create secret tls nexus-ingress-secret --cert=/certs/app.pem --key=/certs/app-key.pem -n nexus 
+  965  cd nexus3/
+  966  ls
+  967  vi ingress.yaml 
+  968  helm install monocular/monocular
+  969  helm repo add monocular https://kubernetes-helm.github.io/monocular
+  970  helm install monocuhellar/monocular
+  971  helm
+  972  helm delete monocular/monocular
+  973  helm d
+  974  helm delete alert-umbrellabird
+  975  ls
+  976  rm -r huqiang/
+  977  rm -Rf huqiang/
+  978  ls
+  979  cd yaml/
+  980  git add .
+  981  git commit
+  982  ls
+  983  history > 1.txt
+  984  history 1000 > 1.txt
