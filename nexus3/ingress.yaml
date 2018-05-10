@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: nexus
 spec:
+#nexus-ingress-secret
   rules:
   - host: nexus.gdphdc.com
     http:
