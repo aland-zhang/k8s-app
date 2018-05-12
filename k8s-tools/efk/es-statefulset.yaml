@@ -59,7 +59,7 @@ metadata:
     addonmanager.kubernetes.io/mode: Reconcile
 spec:
   serviceName: elasticsearch-logging
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       k8s-app: elasticsearch-logging
@@ -96,15 +96,24 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-      volumes:
-      - name: elasticsearch-logging
-        emptyDir: {}
+
       # Elasticsearch requires vm.max_map_count to be at least 262144.
       # If your OS already sets up this number to a higher value, feel free
       # to remove this init container.
       initContainers:
       - image: alpine:3.6
-        command: ["/sbin/sysctl", "-w", "vm.max_map_count=262144"]
+        command: ["/sbin/sysctl", "-w", "vm.max_map_count=524288"]
         name: elasticsearch-logging-init
         securityContext:
           privileged: true
+  volumeClaimTemplates:
+  - metadata:
+      name: elasticsearch-logging
+      annotations:
+        #volume.alpha.kubernetes.io/storage-class: "managed-nfs-storage" #不同版本这里引用的alpha/beta不同注意
+        volume.beta.kubernetes.io/storage-class: "nfs-storage"
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 60Gi

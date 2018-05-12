@@ -43,7 +43,16 @@ spec:
         volumeMounts:
         - name: taigamedia-persistent-storage
           mountPath: /usr/src/taiga-back/media
+#        - name: taiga-conf
+#          mountPath: /usr/src/taiga-front-dist/dist/
+          
       volumes:
       - name: taigamedia-persistent-storage
         persistentVolumeClaim:
           claimName: taigamedia-pv-claim
+#      - name: taiga-conf 
+#        configMap:
+#          name: taiga-conf 
+#          items:
+#          - key: conf.json
+#            path: conf.json
