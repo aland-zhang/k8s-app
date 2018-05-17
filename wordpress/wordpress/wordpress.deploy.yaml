@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress:4.9-php5.6-fpm
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /var/www/html  
+          name: html
+        env:  
+        - name: WORDPRESS_DB_HOST  
+          value: wordpress-mysql.wordpress 
+        - name: WORDPRESS_DB_PASSWORD  
+          value: PHp@ssw0rd
+        - name: WORDPRESS_DB_NAME
+          value: wordpress
+      volumes:
+        - name: html
+          persistentVolumeClaim:
+            claimName: wordpress-data-pvc

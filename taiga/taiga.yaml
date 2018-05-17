@@ -11,9 +11,12 @@ spec:
         app: taiga
         tier: web
     spec:
+      imagePullSecrets:
+      - name: harborkey    
       containers:
       - name: front
-        image: benhutchins/taiga
+        image: harbor.gdphdc.com/taiga/taiga
+#        image: benhutchins/taiga
         ports:
         - containerPort: 80
           name: front

@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+  labels:
+    name: wordpress-mysql
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: wordpress-mysql-apps
+    spec:
+      containers:
+      - name: wordpress-mysql-app
+        image: mysql:5.5
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom: 
+              configMapKeyRef: 
+               name: wordpress-mysql-config
+               key: MYSQL_ROOT_PASSWORD
+          - name: MYSQL_DATABASE
+            valueFrom: 
+              configMapKeyRef: 
+               name: wordpress-mysql-config
+               key: MYSQL_DATABASE            
+        volumeMounts:
+        - name: mysql-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-storage
+        persistentVolumeClaim:
+          claimName: mysql-storage-pvc 

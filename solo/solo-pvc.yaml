@@ -1,8 +1,8 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: jenkins
-  namespace: jenkins
+  name: solo-data-pvc
+  namespace: solo
 spec:
   storageClassName: nfs-storage
   accessModes:
@@ -10,5 +10,3 @@ spec:
   resources:
     requests:
       storage: 20Gi
----
----

@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: gogs
+  name: wordpress
 spec:
   tls:
   - hosts: 
-    - gogs.gdphdc.com
-    secretName: gogs-ingress-secret 
+    - blog.gdphdc.com
+    secretName: wordpress-ingress-secret 
   rules:
-  - host: gogs.gdphdc.com
+  - host: blog.gdphdc.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: gogs
+          serviceName: wordpress-svc
           servicePort: 80

@@ -1,14 +1,12 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: jenkins
-  namespace: jenkins
+  name: mysql-storage-pvc 
+  namespace: wordpress
 spec:
   storageClassName: nfs-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 20Gi
----
----
+      storage: 50Gi

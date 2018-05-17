@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-mysql-config
+data:
+  MYSQL_ROOT_PASSWORD: "PHp@ssw0rd"
+  MYSQL_DATABASE: "wordpress"

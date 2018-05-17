@@ -1,17 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: gogs
+  name: solo
+  namespace: solo
 spec:
   tls:
   - hosts: 
-    - gogs.gdphdc.com
-    secretName: gogs-ingress-secret 
+    - solo.gdphdc.com
+    secretName: solo-ingress-secret 
   rules:
-  - host: gogs.gdphdc.com
+  - host: solo.gdphdc.com
     http:
       paths:
       - path: /
         backend:
-          serviceName: gogs
+          serviceName: solo-svc
           servicePort: 80

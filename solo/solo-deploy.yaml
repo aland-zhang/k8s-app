@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: solo
+  labels:
+    name: solo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: solo-apps
+    spec:
+      imagePullSecrets:
+      - name: harborkey
+      containers:
+      - name: solo-app
+        image: harbor.gdphdc.com/library/solo:1.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: SERVER_SCHMEA
+          value: https
+        - name: SERVER_NAME
+          value: "solo.gdphdc.com"
+        - name: SERVER_PORT
+          value: "80"
+        - name: DATABASE_TYPE
+          value: "mysql"
+        - name: DATABASE_HOST
+          value: "10.45.10.8"
+        - name: DATABASE_USERNAME
+          value: "solo"
+        - name: DATABASE_PASSWORD
+          value: "solo"
+
+
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: solo-data
+          mountPath: /opt/b3log/backup/
+        resources:
+          limits:
+            cpu: 400m
+            memory: 2048Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
+      volumes:
+      - name: solo-data
+        persistentVolumeClaim:
+          claimName: solo-data-pvc
