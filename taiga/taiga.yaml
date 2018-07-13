@@ -15,8 +15,8 @@ spec:
       - name: harborkey    
       containers:
       - name: front
-        image: harbor.gdphdc.com/taiga/taiga
-#        image: benhutchins/taiga
+#        image: harbor.gdphdc.com/taiga/taiga
+        image: benhutchins/taiga
         ports:
         - containerPort: 80
           name: front

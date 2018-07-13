@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sis-mysql-config
+data:
+  MYSQL_ROOT_PASSWORD: "openplant"
+  MYSQL_DATABASE: "openplant"

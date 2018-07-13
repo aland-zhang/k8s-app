@@ -5,8 +5,9 @@ metadata:
   name: taigamedia-pv-claim
   labels:
     app: taiga
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-storage"
 spec:
-  storageClassName: nfs-storage
   accessModes:
     - ReadWriteOnce
   resources:

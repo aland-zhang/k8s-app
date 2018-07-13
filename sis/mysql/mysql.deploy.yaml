@@ -1,19 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: gogs-mysql
+  name: sis-mysql
   labels:
-    name: gogs-mysql
+    name: sis-mysql
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: gogs-mysql-apps
+        name: sis-mysql-apps
     spec:
       containers:
-      - name: gogs-mysql-app
-        image: mysql:5.7
+      - name: sis-mysql-app
+        image: mysql:5.5
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3306
@@ -21,12 +21,12 @@ spec:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom: 
               configMapKeyRef: 
-               name: gogs-mysql-config
+               name: sis-mysql-config
                key: MYSQL_ROOT_PASSWORD
           - name: MYSQL_DATABASE
             valueFrom: 
               configMapKeyRef: 
-               name: gogs-mysql-config
+               name: sis-mysql-config
                key: MYSQL_DATABASE            
         volumeMounts:
         - name: mysql-storage
@@ -34,4 +34,4 @@ spec:
       volumes:
       - name: mysql-storage
         persistentVolumeClaim:
-          claimName: gogs-storage-pvc 
+          claimName: sis-mysql-storage-pvc 
