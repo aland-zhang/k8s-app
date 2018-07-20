@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1beta1
+kind: StorageClass
+metadata:
+  name: standard
+  annotations:
+    storageclass.beta.kubernetes.io/is-default-class: true 
+provisioner:  gdphdc.com/nfs # 此处引用nfs-client-provisioner里面的 fuseim.pri/ifs or choose another name, must match deployment's env PROVISIONER_NAME'

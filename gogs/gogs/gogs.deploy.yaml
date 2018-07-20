@@ -20,8 +20,8 @@ spec:
         volumeMounts:
         - name: gogs-data
           mountPath: /data
-        - name: gogs-config
-          mountPath: /data/conf/
+#        - name: gogs-config
+#          mountPath: /data/conf/
         resources:
           limits:
             cpu: 400m
@@ -33,7 +33,7 @@ spec:
       - name: gogs-data
         persistentVolumeClaim:
           claimName: gogs-data-pvc
-      - name: gogs-config
-        configMap:
-          name: gogs-config
+#      - name: gogs-config
+#        configMap:
+#          name: gogs-config
         
