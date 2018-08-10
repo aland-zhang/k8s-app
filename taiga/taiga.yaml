@@ -31,31 +31,39 @@ spec:
           value: "taiga"                    
         - name: TAIGA_DB_PASSWORD
           value: "PHp@ssw0rd"
-        - name: TAIGA_ENABLE_EMAIL
-          value: "True"
-        - name: TAIGA_EMAIL_FROM
-          value: "phadmin@gdphdc.com"
-        - name: TAIGA_EMAIL_USE_TLS
-          value: "False"
-        - name: TAIGA_EMAIL_HOST
-          value: "smtp.gdphdc.com"
-        - name: TAIGA_EMAIL_PORT
-          value: "25"
+#        - name: TAIGA_ENABLE_EMAIL
+#          value: "True"
+#       - name: TAIGA_EMAIL_FROM
+#         value: "phadmin@gdphdc.com"
+#       - name: TAIGA_EMAIL_USE_TLS
+#         value: "False"
+#       - name: TAIGA_EMAIL_HOST
+#         value: "smtp.gdphdc.com"
+#       - name: TAIGA_EMAIL_PORT
+#         value: "25"
 
 
         volumeMounts:
         - name: taigamedia-persistent-storage
           mountPath: /usr/src/taiga-back/media
-#        - name: taiga-conf
-#          mountPath: /usr/src/taiga-front-dist/dist/
-          
+        - name: taiga-conf
+          mountPath: /taiga/conf.json
+          subPath: conf.json
+        - name: taiga-conf
+          mountPath: /taiga/local.py
+          subPath: local.py        
       volumes:
       - name: taigamedia-persistent-storage
         persistentVolumeClaim:
           claimName: taigamedia-pv-claim
-#      - name: taiga-conf 
-#        configMap:
-#          name: taiga-conf 
-#          items:
-#          - key: conf.json
-#            path: conf.json
+#     - name: taiga-config
+#       persistentVolumeClaim:
+#         claimName: taiga-config-pv-claim
+      - name: taiga-conf 
+        configMap:
+          name: taiga-conf 
+          items:
+          - key: conf.json
+            path: conf.json
+          - key: local.py
+            path: local.py          

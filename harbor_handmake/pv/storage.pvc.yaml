@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: log-pvc
+  name: storage-pvc
 spec:
   storageClassName: nfs-storage
   accessModes:
@@ -9,3 +9,4 @@ spec:
   resources:
     requests:
       storage: 5Gi
+  

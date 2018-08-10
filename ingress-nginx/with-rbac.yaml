@@ -26,7 +26,7 @@ spec:
           privileged: true
       containers:
         - name: nginx-ingress-controller
-          image: registry.cn-hangzhou.aliyuncs.com/google_containers/nginx-ingress-controller:0.9.0
+          image: registry.cn-hangzhou.aliyuncs.com/google_containers/nginx-ingress-controller:0.17.1
           args:
             - /nginx-ingress-controller
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
