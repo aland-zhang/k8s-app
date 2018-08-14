@@ -1,0 +1,1 @@
+nohup kubectl proxy --address='0.0.0.0'  --accept-hosts='^*$' >/dev/null 2>&1 &
