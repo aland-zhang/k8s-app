@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nexus3
-        image: sonatype/docker-nexus3
+        image: sonatype/nexus3
         ports:
         - containerPort: 8081
           protocol: TCP
