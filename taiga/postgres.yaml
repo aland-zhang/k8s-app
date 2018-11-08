@@ -45,7 +45,7 @@ spec:
         tier: postgres
     spec:
       containers:
-      - image: postgres
+      - image: postgres:10
         name: postgres
         imagePullPolicy: IfNotPresent
         env:

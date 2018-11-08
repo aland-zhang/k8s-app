@@ -1,0 +1,33 @@
+apiVersion: certmanager.k8s.io/v1alpha1   
+kind: ClusterIssuer   
+metadata:   
+ name: letsencrypt-prod   
+ namespace: kube-system   
+spec:   
+ acme: 
+     #The ACME server URL   
+     server: https://acme-v01.api.letsencrypt.org/directory
+     #用于注册ACME的电子邮件地址  
+     email: 758713041@qq.com
+     #用于存储ACME帐户私钥的秘密名称  
+     privateKeySecretRef:   
+       name: letsencrypt-prod   
+     #启用HTTP-01质询提供程序  
+     http01: {}   
+---   
+apiVersion: certmanager.k8s.io/v1alpha1   
+kind: ClusterIssuer   
+metadata:   
+ name: letsencrypt-staging   
+ namespace: kube-system   
+spec:   
+ acme : 
+     # ACME的服务器URL   
+     server: https://acme-staging.api.letsencrypt.org/directory
+     # 用于ACME注册的电子邮件地址  
+     email: 758713041@qq.com 
+     # 用于存储ACME帐户私钥的密钥的 名称  
+     privateKeySecretRef:   
+       name: letsencrypt-staging   
+     # 启用HTTP-01质询提供程序  
+     http01: {}

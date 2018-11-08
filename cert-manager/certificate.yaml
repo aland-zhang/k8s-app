@@ -1,0 +1,22 @@
+apiVersion: certmanager.k8s.io/v1alpha1   
+kind: Certificate  
+meteadata:   
+ name: ingress-certs   
+ namespace: monitoring
+spec:   
+ secretName: ingress-certs   
+ issuerRef:  
+    name: letsencrypt-staging   
+    kind: ClusterIssuer   
+ commonName: grafana.gdphdc.com
+ dnsNames:   
+ - grafana.gdphdc.com
+ - prometheus.gdphdc.com   
+ acme:   
+   config:  
+   - http01:   
+        ingressClass: none
+     domains:  
+     - grafana.gdphdc.com
+     - prometheus.gdphdc.com
+
