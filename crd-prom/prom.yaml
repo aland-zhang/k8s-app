@@ -1,0 +1,47 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  labels:
+    app: prometheus-operator-prometheus
+    chart: prometheus-operator-0.1.26
+    heritage: Tiller
+    release: prometheus-operator
+  name: prometheus-operator-prometheus
+  namespace: monitoring
+spec:
+  alerting:
+    alertmanagers:
+    - name: prometheus-operator-alertmanager
+      namespace: monitoring
+      pathPrefix: /
+      port: web
+  baseImage: quay.io/prometheus/prometheus
+  externalUrl: http://prometheus-operator-prometheus.monitoring:9090
+  listenLocal: false
+  logLevel: info
+  paused: false
+  replicas: 1
+  retention: 10d
+  routePrefix: /
+  ruleSelector:
+    matchLabels:
+      app: prometheus-operator
+      release: prometheus-operator
+  serviceAccountName: prometheus-operator-prometheus
+  serviceMonitorNamespaceSelector: {}
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  additionalScrapeConfigs:
+    name: additional-scrape-configs
+    key: prometheus-additional.yaml
+  storage:
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 50Gi
+        storageClassName: rbd
+  version: v2.4.3

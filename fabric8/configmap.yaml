@@ -1,8 +1,0 @@
-apiVersion: "v1"
-data:
-  config.yml: |-
-    exposer: "Ingress"
-    domain: "gdphdc.com"
-kind: "ConfigMap"
-metadata:
-  name: "exposecontroller"

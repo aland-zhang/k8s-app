@@ -18,7 +18,7 @@ Master:
   UseSecurity: true
   HostNetworking: false
   AdminUser: admin
-  AdminPassword: PHp@ssw0rd
+  AdminPassword: "********"
   resources:
     requests:
       cpu: "50m"

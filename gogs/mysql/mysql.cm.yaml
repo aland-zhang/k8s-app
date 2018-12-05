@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: gogs-mysql-config
 data:
-  MYSQL_ROOT_PASSWORD: "PHp@ssw0rd"
+  MYSQL_ROOT_PASSWORD: "********"
   MYSQL_DATABASE: "gogs"

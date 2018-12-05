@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: eap-mysql-config
-data:
-  MYSQL_ROOT_PASSWORD: "PHp@ssw0rd"
-  MYSQL_DATABASE: "eap"

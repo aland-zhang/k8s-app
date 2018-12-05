@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2014-2017 Andrey Antukh <niwi@niwi.nz>
-# Copyright (C) 2014-2017 Jes®≤s Espino <jespinog@gmail.com>
-# Copyright (C) 2014-2017 David Barrag®¢n <bameda@dbarragan.com>
+# Copyright (C) 2014-2017 JesÔøΩÔøΩs Espino <jespinog@gmail.com>
+# Copyright (C) 2014-2017 David BarragÔøΩÔøΩn <bameda@dbarragan.com>
 # Copyright (C) 2014-2017 Alejandro Alonso <alejandro.alonso@kaleidos.net>
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -33,7 +33,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'taiga',
         'USER': 'taiga',
-        'PASSWORD': 'PHp@ssw0rd',
+        'PASSWORD': '********',
         'HOST': 'postgres.taiga',
         'PORT': '5432',
     }
@@ -97,7 +97,7 @@ EMAIL_USE_SSL = True # You cannot use both (TLS and SSL) at the same time!
 EMAIL_HOST = 'smtp.126.com'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'gdphdc_xxfb@126.com'
-EMAIL_HOST_PASSWORD = 'PHPPadmin321'
+EMAIL_HOST_PASSWORD = '*******' #Ê≥®ÊÑèÊõ¥Êñ∞ÂØÜÁ†Å
 
 # GMAIL SETTINGS EXAMPLE
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

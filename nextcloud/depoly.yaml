@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: nextcloud
+  name: nextcloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nextcloud
+  template:
+    metadata:
+      labels:
+        run: nextcloud
+    spec: 
+      containers:
+      - image: nextcloud:14.0.4
+        name: nextcloud
+        ports:
+        - containerPort: 80
+        env:
+        - name: POSTGRES_DB
+          value: nextcloud
+        - name: POSTGRES_USER
+          value: nextcloud
+        - name: POSTGRES_PASSWORD
+          value: "********" 
+        - name: POSTGRES_HOST
+          value: nextcloud-postgresql:5432
+        - name: NEXTCLOUD_ADMIN_USER
+          value: deerjoe
+        - name: NEXTCLOUD_ADMIN_PASSWORD
+          value: "********"       
+        volumeMounts:
+        - name: nextcloud-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: nextcloud-storage
+        persistentVolumeClaim:
+          claimName: nextcloud-storage-claim 
+
+
+
+

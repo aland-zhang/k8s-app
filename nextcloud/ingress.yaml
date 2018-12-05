@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nextcloud
+spec:
+#  tls:
+#  - hosts: 
+#    - nextcloud.deerjoe.com
+#    secretName: ingress-secret   
+  rules:
+  - host: nextcloud.deerjoe.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nextcloud-svc
+          servicePort: 80

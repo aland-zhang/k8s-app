@@ -23,7 +23,7 @@ spec:
         - name: WORDPRESS_DB_HOST  
           value: wordpress-mysql.wordpress 
         - name: WORDPRESS_DB_PASSWORD  
-          value: PHp@ssw0rd
+          value: "********"
         - name: WORDPRESS_DB_NAME
           value: wordpress
       volumes:

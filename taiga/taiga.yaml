@@ -30,7 +30,7 @@ spec:
         - name: TAIGA_DB_NAME
           value: "taiga"                    
         - name: TAIGA_DB_PASSWORD
-          value: "PHp@ssw0rd"
+          value: "********"
 #        - name: TAIGA_ENABLE_EMAIL
 #          value: "True"
 #       - name: TAIGA_EMAIL_FROM

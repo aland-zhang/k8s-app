@@ -54,7 +54,7 @@ spec:
         - name: POSTGRES_DB
           value: taiga
         - name: POSTGRES_PASSWORD
-          value: "PHp@ssw0rd"
+          value: "********"
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
         ports:
