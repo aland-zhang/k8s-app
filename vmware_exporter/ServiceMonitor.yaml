@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: vmware-exporter
+  labels:
+    app: vmware-exporter
+    release: prometheus
+spec:
+  jobLabel: vmware-exporter
+  selector:
+    app: vmware-exporter
+    release: vmware-exporter
+  namespaceSelector:
+    matchNames:
+    - monitoring
+  endpoints:
+  - port: "9272"
+    interval: 5s

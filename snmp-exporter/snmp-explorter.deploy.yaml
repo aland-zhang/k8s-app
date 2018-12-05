@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: snmp-explorter
+  name: snmp-explorter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: snmp-explorter
+  template:
+    metadata:
+      labels:
+        run: snmp-explorter
+    spec:
+      containers:
+      - image: prom/snmp-exporter
+        name: snmp-explorter
+        volumeMounts:
+        - name: snmp
+          mountPath: /etc/snmp_exporter
+      volumes:
+      - name: snmp
+        configMap:
+          name: snmp
+          items:
+          - key: snmp.yml
+            path: snmp.yml

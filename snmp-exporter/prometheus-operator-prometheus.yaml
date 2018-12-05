@@ -1,0 +1,53 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  clusterName: ""
+  creationTimestamp: 2018-11-12T15:56:47Z
+  generation: 1
+  labels:
+    app: prometheus-operator-prometheus
+    chart: prometheus-operator-0.1.16
+    heritage: Tiller
+    release: prometheus
+  name: prometheus-prometheus-oper-prometheus
+  namespace: monitor
+  resourceVersion: "24181626"
+  selfLink: /apis/monitoring.coreos.com/v1/namespaces/monitor/prometheuses/prometheus-prometheus-oper-prometheus
+  uid: 8f935641-e693-11e8-828a-005056aacc1b
+spec:
+  alerting:
+    alertmanagers:
+    - name: prometheus-prometheus-oper-alertmanager
+      namespace: monitor
+      pathPrefix: /
+      port: web
+  baseImage: quay.io/prometheus/prometheus
+  externalUrl: http://prometheus.gdphdc.com/
+  listenLocal: false
+  logLevel: info
+  paused: false
+  replicas: 1
+  retention: 30d
+  routePrefix: /
+  ruleSelector:
+    matchLabels:
+      app: prometheus-operator
+      release: prometheus
+  serviceAccountName: prometheus-prometheus-oper-prometheus
+  serviceMonitorNamespaceSelector: {}
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus
+  additionalScrapeConfigs:
+    name: additional-scrape-configs
+    key: prometheus-additional.yaml
+  storage:
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 50Gi
+        storageClassName: nfs-storage
+  version: v2.4.3

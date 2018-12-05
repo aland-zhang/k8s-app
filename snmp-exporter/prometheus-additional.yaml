@@ -1,0 +1,14 @@
+- job_name: 'snmp'
+  static_configs:
+    - targets:
+      - 10.45.12.254  # SNMP device.
+  metrics_path: /snmp
+  params:
+    module: [if_mib]
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: snmp-explorter.monitor:9116  # The SNMP exporter's real hostname:port.
